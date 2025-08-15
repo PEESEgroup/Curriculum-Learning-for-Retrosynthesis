@@ -38,23 +38,39 @@ This repository provides a framework for retrosynthesis prediction using **Curri
 ```bash
 retrosynthesis-curriculum-learning/
 │
-├── notebooks/                    # All training & evaluation notebooks
-│   ├── BART/                     # BART model experiments (training + evaluation)
-│   │   ├── Curriculum_learning_for_retrosynthesis_(BART).ipynb
-│   │   └── Curriculum_learning_for_retrosynthesis_(BART_baseline).ipynb
-│   │   └── Evaluation_of_curriculum_learning_for_retrosynthesis_(BART).ipynb
-│   │
-│   ├── ChemBERTa_DistilGPT2/     # ChemBERTa + DistilGPT2 experiments (training + evaluation)
-│   │   ├── Curriculum_learning_for_retrosynthesis_(ChemBERTa_distilgpt2).ipynb
-│   │   └── Curriculum_learning_for_retrosynthesis_(ChemBERTa_distilgpt2_baseline).ipynb
-│   │   └── Evaluation_of_curriculum_learning_for_retrosynthesis_(ChemBERTa_distilgpt2).ipynb
-│   │
-│   └── ReactionT5v2/             # ReactionT5v2 experiments (training + evaluation)
-│   │   ├── Curriculum_learning_for_retrosynthesis_(T5).ipynb
-│   │   └── Curriculum_learning_for_retrosynthesis_(T5_baseline).ipynb
-│   │   └── Evaluation_of_curriculum_learning_for_retrosynthesis_(T5).ipynb
+├── data/                                        # Dataset files used in the study
+│   └── USPTO_50K.csv
 │
-├── README.md                     # Project documentation
+├── evaluation/                                  # Model evaluation notebooks
+│   ├── model-based-evaluations/                 # Evaluation scripts for each architecture
+│   │   ├── BART/
+│   │   │   └── Evaluation_of_curriculum_learning_for_retrosynthesis_(BART).ipynb
+│   │   ├── ChemBERTa_DistilGPT2/
+│   │   │   └── Evaluation_of_curriculum_learning_for_retrosynthesis_(ChemBERTa_distilgpt2).ipynb
+│   │   └── ReactionT5v2/
+│   │       └── Evaluation_of_curriculum_learning_for_retrosynthesis_(T5).ipynb
+│   │
+│   └── similarity-decay-analysis/               # Similarity decay analysis (as presented in the paper)
+│       └── Evaluation_of_curriculum_learning_for_retrosynthesis_(ChemBERTa_+_DistilGPT2_similarity_decay_analysis).ipynb
+│
+├── training/                                    # Model training notebooks
+│   ├── normal-training/                         # Non-scaffold training experiments
+│   │   ├── BART/                                 # BART model experiments
+│   │   │   ├── Curriculum_learning_for_retrosynthesis_(BART).ipynb
+│   │   │   └── Curriculum_learning_for_retrosynthesis_(BART_baseline).ipynb
+│   │   │
+│   │   ├── ChemBERTa_DistilGPT2/                 # ChemBERTa + DistilGPT2 experiments
+│   │   │   ├── Curriculum_learning_for_retrosynthesis_(ChemBERTa_distilgpt2).ipynb
+│   │   │   └── Curriculum_learning_for_retrosynthesis_(ChemBERTa_distilgpt2_baseline).ipynb
+│   │   │
+│   │   └── ReactionT5v2/                         # ReactionT5v2 experiments
+│   │       ├── Curriculum_learning_for_retrosynthesis_(T5).ipynb
+│   │       └── Curriculum_learning_for_retrosynthesis_(T5_baseline).ipynb
+│   │
+│   └── scaffold-training/                        # Scaffold-split training experiments
+│       └── Curriculum_learning_for_retrosynthesis_(ChemBERTa_distilgpt2_scaffold).ipynb
+│
+├── README.md                                    # Project documentation
 ```
 
 ## 🚀 Training & Evaluation Workflow
